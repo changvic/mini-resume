@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="switch-bar">
+      <label class="switch">
+        <input type="checkbox" id="darkModeSwitch" />
+        <span class="slider"></span>
+      </label>
+    </div>
     <div class="container">
       <img src="images/avatar.png" alt="頭貼" class="avatar" />
       <h1>Vic Chang</h1>
@@ -37,5 +43,38 @@
         </li>
       </ul>
     </div>
+    <footer>
+      <p>© 2025 Vic Chang. All rights reserved.</p>
+    </footer>
+    <script>
+      const switchEl = document.getElementById("darkModeSwitch");
+      let theme = localStorage.getItem("theme");
+
+      // 預設永遠是黑暗模式
+      if (!theme) {
+        theme = "dark";
+        localStorage.setItem("theme", "dark");
+      }
+
+      // 根據 theme 決定 body class 與開關
+      if (theme === "dark") {
+        document.body.classList.add("dark");
+        switchEl.checked = false; // slider 在「黑暗」狀態（未勾選）
+      } else {
+        document.body.classList.remove("dark");
+        switchEl.checked = true; // slider 在「白」狀態（勾選）
+      }
+
+      // 切換slider時同步class與localStorage
+      switchEl.addEventListener("change", function () {
+        if (this.checked) {
+          document.body.classList.remove("dark"); // 白色模式
+          localStorage.setItem("theme", "light");
+        } else {
+          document.body.classList.add("dark"); // 黑暗模式
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
   </body>
 </html>
