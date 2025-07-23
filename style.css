@@ -10,15 +10,19 @@ body {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 20px #0002;
-  padding: 32px 24px;
+  padding: 32px 16px; /* padding 左右調成16px，手機時更舒服 */
   text-align: center;
 }
+
 .avatar {
   width: 110px;
   border-radius: 50%;
   margin-bottom: 20px;
   border: 2px solid #e0e0e0;
+  max-width: 100%;
+  height: auto;
 }
+
 h1 {
   margin-bottom: 0.4em;
 }
@@ -54,11 +58,46 @@ a:hover {
   color: #848484;
 }
 
+.skills li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 footer {
   text-align: center;
   margin-top: 2em;
   font-size: 0.8em;
   color: #888;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 24px 4vw;
+    font-size: 1.02em;
+  }
+  .avatar {
+    width: 80px;
+    margin-bottom: 16px;
+  }
+  .switch-bar {
+    top: 12px;
+    right: 12px;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+  h2 {
+    font-size: 1.08em;
+    margin-top: 1em;
+  }
+  ul,
+  li {
+    font-size: 1em;
+  }
 }
 
 .switch-bar {
