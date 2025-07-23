@@ -47,6 +47,13 @@ a:hover {
     box-shadow: none;
   }
 }
+.skills i {
+  font-size: 1.4em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  color: #848484;
+}
+
 footer {
   text-align: center;
   margin-top: 2em;
@@ -112,6 +119,9 @@ body.dark .container {
 body.dark h2,
 body.dark a {
   color: #a5c7ff;
+}
+body.dark .skills i {
+  color: #848484;
 }
 body.dark footer {
   color: #bbb;
